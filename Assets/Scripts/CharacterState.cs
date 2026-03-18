@@ -14,12 +14,12 @@ public class CharacterState : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        
+        IsGrounded = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        IsGrounded = false;
     }
 }

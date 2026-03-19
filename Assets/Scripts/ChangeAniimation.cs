@@ -1,13 +1,12 @@
 using UnityEngine;
 
-public class ChangeAniimation : MonoBehaviour
+public class ChangeAnimation : MonoBehaviour
 {
-
     private Animator animator;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private CharacterState state;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         animator = GetComponent<Animator>();
@@ -16,12 +15,32 @@ public class ChangeAniimation : MonoBehaviour
         state = GetComponent<CharacterState>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        animator.SetFloat("Velocity", Mathf.Abs(rb.linearVelocity.x));
-        sr.flipX = rb.linearVelocity.x < 0;
+        if (animator == null || !animator.isActiveAndEnabled || animator.runtimeAnimatorController == null)
+            return;
 
-        animator.SetBool("IsGrounded", state.IsGrounded);
+        float horizontalVelocity = Mathf.Abs(rb.linearVelocity.x);
+        animator.SetFloat("Velocity", horizontalVelocity);
+
+       
+        if (rb.linearVelocity.x > 0.1f)
+        {
+            sr.flipX = true;
+        }
+        else if (rb.linearVelocity.x < -0.1f)
+        {
+            sr.flipX = false;
+        }
+
+        if (state != null)
+        {
+            animator.SetBool("IsGrounded", state.IsGrounded);
+        }
+
+        if (state != null && state.IsDead)
+        {
+            animator.SetTrigger("Die");
+        }
     }
 }

@@ -13,16 +13,20 @@ public class InputMovement : MonoBehaviour
     private float YVelocity = 7f;
 
     private Rigidbody2D Rb;
+
+    private CharacterState state;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        MovementeAction.Enable();
         Rb = GetComponent<Rigidbody2D>();
+        state = GetComponentInChildren<CharacterState>();
     }
 
     private void OnEnable()
     {
+        MovementeAction.Enable();
         JumpAction.Enable();
+
         JumpAction.performed += Jump;
     }
 
@@ -34,7 +38,10 @@ public class InputMovement : MonoBehaviour
 
     private void Jump(InputAction.CallbackContext context)
     {
-        Rb.linearVelocityY = YVelocity * 1;
+        if (state.IsGrounded)
+        {
+            Rb.linearVelocityY = YVelocity;
+        }
     }
 
     // Update is called once per frame

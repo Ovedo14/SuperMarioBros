@@ -37,10 +37,5 @@ public class ChangeAnimation : MonoBehaviour
         {
             animator.SetBool("IsGrounded", state.IsGrounded);
         }
-
-        if (state != null && state.IsDead)
-        {
-            animator.SetTrigger("Die");
-        }
     }
 }

@@ -10,7 +10,7 @@ public class InputMovement : MonoBehaviour
     private InputAction JumpAction;
 
     private float XVelocity = 7f;
-    private float YVelocity = 7f;
+    private float YVelocity = 12f;
 
     private Rigidbody2D Rb;
 

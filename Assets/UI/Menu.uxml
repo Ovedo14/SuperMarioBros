@@ -1,0 +1,11 @@
+<ui:UXML xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/Menu.uss?fileID=7433441132597879392&amp;guid=93acc3811d814cb43a8e39d862e2c676&amp;type=3#Menu"/>
+    <ui:VisualElement style="flex-grow: 1;">
+        <ui:VisualElement name="Background" class="backgroud" style="flex-grow: 1; -unity-background-image-tint-color: rgb(180, 171, 171); background-color: rgba(147, 147, 147, 0.44); border-top-left-radius: 15%; border-top-right-radius: 15%; border-bottom-right-radius: 15%; border-bottom-left-radius: 15%;"/>
+        <ui:VisualElement name="Buttons" class="buttons" style="flex-grow: 1;">
+            <ui:Button text="Play" name="Play" class="button"/>
+            <ui:Button text="Help" name="Help" class="button"/>
+            <ui:Button text="Credits" name="Credits" class="button"/>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

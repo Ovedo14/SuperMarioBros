@@ -24,5 +24,11 @@ public class CharacterState : MonoBehaviour
     public void Die()
     {
         IsDead = true;
+        GetComponent<InputMovement>().enabled = false;
+        GetComponent<Collider2D>().enabled = false;
+        Rigidbody2D rb = GetComponent<Rigidbody2D>();
+        rb.linearVelocity = Vector2.zero;
+        rb.linearVelocityY = 12f;
+        GetComponent<Animator>().SetTrigger("IsDied");
     }
 }

@@ -1,0 +1,10 @@
+VisualElement {
+}
+
+.help {
+}
+
+.title {
+    font-size: 78px;
+    -unity-text-align: upper-center;
+}

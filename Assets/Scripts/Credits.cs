@@ -25,14 +25,11 @@ public class Credits : MonoBehaviour
     void Update()
     {
         if (textoCreditos == null) return;
-
         posicionY -= velocidad * Time.deltaTime;
-
         if (posicionY <= reinicioY)
         {
             posicionY = inicioY;
-
-            textoCreditos.style.translate = new StyleTranslate(new Translate(0, new Length(posicionY, LengthUnit.Pixel), 0));
         }
+        textoCreditos.style.top = new StyleLength(posicionY);
     }
 }

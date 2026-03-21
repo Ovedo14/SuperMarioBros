@@ -1,8 +1,12 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Scritp que maneja el movimiento del personaje
 public class InputMovement : MonoBehaviour
 {
+    //Variables para registrar las acciones de movimiento, salto y correr
     [SerializeField]
     private InputAction MovementeAction;
 
@@ -11,6 +15,8 @@ public class InputMovement : MonoBehaviour
 
     [SerializeField]
     private InputAction RunAction;
+
+    //Velocidades para el movimiento normal y corriendo ademas de rigibody y el estado del personaje
 
     private float normalXVelocity = 7f;
     private float normalYVelocity = 12f;
@@ -45,6 +51,7 @@ public class InputMovement : MonoBehaviour
         JumpAction.performed -= Jump;
     }
 
+    //Funcion que se ejecuta al realizar la accion de salto, verifica si el personaje esta en el suelo y asigna la velocidad de salto dependiendo si esta corriendo o no
     private void Jump(InputAction.CallbackContext context)
     {
         if (state.IsGrounded)

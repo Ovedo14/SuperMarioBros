@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Script que maneja el cambio de animaciones del personaje dependiendo de si se mueve y si esta en el suelo o no
 public class ChangeAnimation : MonoBehaviour
 {
     private Animator animator;

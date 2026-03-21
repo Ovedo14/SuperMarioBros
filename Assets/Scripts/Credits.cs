@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Script que maneja el movimiento de los creditos en la escena de creditos, hace que los creditos se muevan y se repitan
 public class Credits : MonoBehaviour
 {
     [Header("Ajustes del Movimiento")]

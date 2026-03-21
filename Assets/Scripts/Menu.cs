@@ -2,6 +2,10 @@ using UnityEngine;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Script que maneja el menu principal, asigna las funciones a los botones del menu para cambiar de escena al hacer click en ellos
+
 public class Menu : MonoBehaviour
 {
     private UIDocument menu;
@@ -32,17 +36,17 @@ public class Menu : MonoBehaviour
         helpButton.UnregisterCallback<ClickEvent>(ShowHelp);
         creditsButton.UnregisterCallback<ClickEvent>(ShowCredits);
     }
-
+    //Funciones que se ejecutan al hacer click en los botones del menu, cambian a la escena correspondiente
     void PlayGame(ClickEvent evt)
     {
         SceneManager.LoadScene("Game");
     }
-
+    //Funcion que se ejecuta al hacer click en el boton de ayuda, cambia a la escena de ayuda
     void ShowHelp(ClickEvent evt)
     {
         SceneManager.LoadScene("Help");
     }
-
+    //Funcion que se ejecuta al hacer click en el boton de creditos, cambia a la escena de creditos
     void ShowCredits(ClickEvent evt) {
         SceneManager.LoadScene("Credits");
     }

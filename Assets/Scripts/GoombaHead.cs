@@ -1,5 +1,9 @@
 using UnityEngine;
 
+ //Ricardo Oved Cornejo Castro A01803272
+ // Script que maneja la colision de la cabeza del goomba con el personaje, asigna la animacion de muerte y el rebote del personaje
+ 
+
 public class GoombaHead : MonoBehaviour
 {
     [Header("Ajustes")]
@@ -13,7 +17,7 @@ public class GoombaHead : MonoBehaviour
     {
         rbMario = GameObject.FindGameObjectWithTag("Player").GetComponent<Rigidbody2D>();
     }
-
+    //Funcion que calcula las collisiones entre la cabeza del goomba y el personaje jugador
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))

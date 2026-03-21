@@ -1,6 +1,10 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Script que maneja el estado del personaje, si esta en el suelo o no y si esta muerto o no
+
 public class CharacterState : MonoBehaviour
 {
     public bool IsGrounded { get; private set; } = false;
@@ -21,6 +25,9 @@ public class CharacterState : MonoBehaviour
             IsGrounded = false;
         }
     }
+    /*Funcion que se ejecuta al morir el personaje, desactiva el movimiento, el collider y asigna una velocidad de 
+     * salto para simular un rebote al morir, ademas de activar la animacion de muerte y cambiar a la escena del 
+     * menu despues de 1.5 segundos*/
 
     public void Die()
     {

@@ -1,5 +1,8 @@
 using UnityEngine;
 
+//Ricardo Oved Cornejo Castro A01803272
+
+// Script que maneja el movimiento del goomba, hace que el goomba se mueva de un lado a otro y que el personaje muera al colisionar con el goomba
 public class GoombaMovement : MonoBehaviour
 {
     public float velocidad = 2f;

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class CharacterState : MonoBehaviour
 {
@@ -30,5 +31,10 @@ public class CharacterState : MonoBehaviour
         rb.linearVelocity = Vector2.zero;
         rb.linearVelocityY = 12f;
         GetComponent<Animator>().SetTrigger("IsDied");
+        Invoke("CambiarEscena", 1.5f);
+    }
+    private void CambiarEscena()
+    {
+        SceneManager.LoadScene("Menu");
     }
 }

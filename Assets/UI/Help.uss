@@ -2,9 +2,13 @@ VisualElement {
 }
 
 .help {
+    font-size: 36px;
 }
 
 .title {
     font-size: 78px;
     -unity-text-align: upper-center;
+    top: auto;
 }
+
+

@@ -1,0 +1,19 @@
+VisualElement {
+}
+
+.title {
+    color: rgb(255, 255, 255);
+}
+
+.credits {
+    white-space: normal;
+}
+
+.creditContainer {
+    position: absolute;
+    top: 23%;
+    right: 11%;
+    bottom: 14%;
+    left: 11%;
+    overflow: hidden;
+}

@@ -1,0 +1,18 @@
+VisualElement {
+}
+
+.returnButton {
+    font-size: 70px;
+    align-items: flex-start;
+    align-self: flex-start;
+    background-image: url("project://database/Assets/Space_Exploration_GUI_Kit/Button_Images/Highlighted_Sprite/large/short-purple-highlight-large.png?fileID=2800000&guid=0e795c2ae03780846b90ff7c77fc80d5&type=3#short-purple-highlight-large");
+    background-color: rgba(0, 0, 0, 0);
+    border-left-color: rgba(0, 0, 0, 0);
+    border-right-color: rgba(0, 0, 0, 0);
+    border-top-color: rgba(0, 0, 0, 0);
+    border-bottom-color: rgba(0, 0, 0, 0);
+}
+
+.returnButton:hover {
+    font-size: 80px;
+}

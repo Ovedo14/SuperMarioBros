@@ -9,13 +9,18 @@ public class InputMovement : MonoBehaviour
     [SerializeField]
     private InputAction JumpAction;
 
-    private float XVelocity = 7f;
-    private float YVelocity = 12f;
+    [SerializeField]
+    private InputAction RunAction;
+
+    private float normalXVelocity = 7f;
+    private float normalYVelocity = 12f;
+
+    private float runXVelocity = 9f;
+    private float runYVelocity = 15f;
 
     private Rigidbody2D Rb;
-
     private CharacterState state;
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+
     void Start()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -26,6 +31,7 @@ public class InputMovement : MonoBehaviour
     {
         MovementeAction.Enable();
         JumpAction.Enable();
+        RunAction.Enable();
 
         JumpAction.performed += Jump;
     }
@@ -33,6 +39,9 @@ public class InputMovement : MonoBehaviour
     private void OnDisable()
     {
         JumpAction.Disable();
+        MovementeAction.Disable();
+        RunAction.Disable();
+
         JumpAction.performed -= Jump;
     }
 
@@ -40,16 +49,26 @@ public class InputMovement : MonoBehaviour
     {
         if (state.IsGrounded)
         {
-            Rb.linearVelocityY = YVelocity;
+            if (RunAction.IsPressed())
+            {
+                Rb.linearVelocityY = runYVelocity;
+            }
+            else
+            {
+                Rb.linearVelocityY = normalYVelocity;
+            }
         }
     }
 
-    // Update is called once per frame
     void Update()
     {
         Vector2 movement = MovementeAction.ReadValue<Vector2>();
+        float currentXVelocity = normalXVelocity;
 
-        Rb.linearVelocityX = movement.x * XVelocity;
-
+        if (RunAction.IsPressed())
+        {
+            currentXVelocity = runXVelocity;
+        }
+        Rb.linearVelocityX = movement.x * currentXVelocity;
     }
 }
